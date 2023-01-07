@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "workspaces": [
+    "shell",
+    "site1",
+    "site2"
+  ],
+  "scripts": {
+    "start:site1": "yarn workspace site1 start",
+    "start:site2": "yarn workspace site2 start",
+    "start:shell": "yarn workspace shell start",
+    "start": "concurrently \"npm:start:site1\" \"npm:start:site2\" \"npm:start:shell\""
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
