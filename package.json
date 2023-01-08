@@ -1,17 +1,17 @@
 {
   "private": true,
   "workspaces": [
-    "shell",
-    "site1",
-    "site2"
+    "packages/*"
   ],
   "scripts": {
     "start:site1": "yarn workspace site1 start",
+    "start:api": "yarn workspace api start",
     "start:site2": "yarn workspace site2 start",
     "start:shell": "yarn workspace shell start",
-    "start": "concurrently \"npm:start:site1\" \"npm:start:site2\" \"npm:start:shell\""
+    "start": "concurrently \"npm:start:api\" \"npm:start:site1\" \"npm:start:site2\" \"npm:start:shell\""
   },
   "dependencies": {
+    "axios": "^1.2.2",
     "concurrently": "^7.6.0"
   }
 }
