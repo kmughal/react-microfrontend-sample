@@ -1,10 +1,7 @@
 {
   "private": true,
   "workspaces": [
-    "shell",
-    "site1",
-    "site2",
-    "api"
+    "packages/*"
   ],
   "scripts": {
     "start:site1": "yarn workspace site1 start",

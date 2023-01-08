@@ -3,18 +3,18 @@ import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import MicroFrontEnd from "./components/MicroFrontend";
 const { REACT_APP_SITE1: siteOneHost, REACT_APP_SITE2: siteTwoHost } =
   process.env;
- 
+
 const sites = [
-  { to: "/", name: "Home", host: "http://localhost:3000" },
   { to: "site1", name: "Site1", host: siteOneHost },
   { to: "site2", name: "Site2", host: siteTwoHost }
 ];
- 
+
 const Main = () => {
   return (
     <Router>
       <Layout sites={sites} />
       <Routes>
+        <Route path="/" element={() => <h1>Home page</h1>} />
         {sites.map((site) => (
           <Route path={site.to} element={GetElement(site)} />
         ))}
